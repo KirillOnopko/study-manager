@@ -1,5 +1,6 @@
 import express from "express"
 import { accountRouter } from "./routes/accountRoutes.js"
+import { errorHandler } from "./middleware/handlers.js"
 
 const app = express()
 
@@ -16,6 +17,8 @@ app.get("/", (req, res) => {
 })
 
 app.use("/account", accountRouter)
+
+app.use(errorHandler)
 
 app.listen(3000, () => {
     console.log("Server started.")
