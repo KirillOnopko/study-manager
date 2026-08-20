@@ -1,1 +1,3 @@
-console.log("awdswdad".split(" "))
+
+
+console.log(Number.isInteger(number))

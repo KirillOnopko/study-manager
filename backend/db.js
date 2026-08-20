@@ -1,10 +1,13 @@
 import {Pool} from "pg";
+import "dotenv/config"
+
+const DB_PASSWORD = process.env.DB_PASSWORD
 
 const pool = new Pool({
     user: "postgres", 
     host: "localhost",
     database: "study_manager",
-    password: "yod2026", // УБЕРИ ПАРОЛЬ ОТСЮДА В .env
+    password: DB_PASSWORD,
     port: 5432,
 });
 

@@ -1,6 +1,8 @@
 import express from "express"
 import { accountRouter } from "./routes/accountRoutes.js"
-import { errorHandler } from "./middleware/handlers.js"
+import { subjectsRouter } from "./routes/subjectsRoutes.js"
+import { tasksRouter } from "./routes/tasksRoutes.js"
+import { errorHandler, notFoundHandler } from "./middleware/handlers.js"
 
 const app = express()
 
@@ -13,12 +15,15 @@ app.use((req, res, next) => {
 app.use(express.json())
 
 app.get("/", (req, res) => {
-    res.status(200).json("Все работает.")
+    res.status(200).json({"message": "Все работает."})
 })
 
 app.use("/account", accountRouter)
+app.use("/subjects", subjectsRouter)
+app.use("/tasks", tasksRouter)
 
 app.use(errorHandler)
+app.use(notFoundHandler)
 
 app.listen(3000, () => {
     console.log("Server started.")

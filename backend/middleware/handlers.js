@@ -1,4 +1,4 @@
-export async function errorHandler(error, req, res, next) {
+async function errorHandler(error, req, res, next) {
     if (error.statusCode) {
         console.log(`Произошла ошибка.`)
         console.log(`Причина: ${error.message} // Код: ${error.statusCode}`)
@@ -15,3 +15,11 @@ export async function errorHandler(error, req, res, next) {
         })
     }
 }
+
+async function notFoundHandler(req, res, next) {
+    res.status(404).json({
+        "message": "Page Not Found"
+    })
+}
+
+export {errorHandler, notFoundHandler}
