@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/me.css">
+    <script type="module" src="/js/me.js" defer></script>
+</head>
+<body>
+    <!--
+    слева сверху стрелочка position: fixed
+    1. Аватарка 2. Имя 3. Username 4. Email 5. Created At
+    -->
+    <a href="/dashboard" id="arrow-left">
+        <svg xmlns="http://w3.org" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+    </a>
+    <main>
+        <div id="profile-card">
+            <div id="profile-picture"></div>
+            <div id="top-information">
+                <p id="name">Kirill</p>
+                <p id="username">@marvi</p>
+                <p id="subjects" class="activity"><span>Active subjects: </span><span id="subjectsNumber">5</span></p>
+                <p id="tasks" class="activity"><span>Current tasks: </span><span id="tasksNumber">40</span></p>
+            </div>
+            <p id="created-at"><span>Member since: </span><span id="created-at-date">23 Aug, 2026, 3:27 PM</span></p>
+        </div>
+    </main>
+</body>
+</html>

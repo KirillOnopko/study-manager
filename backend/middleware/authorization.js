@@ -4,7 +4,7 @@ import "dotenv/config"
 
 const jwtSecret = process.env.JWT_SECRET
 
-async function checkToken(req, res, next) {
+/*async function checkBearerToken(req, res, next) {
     const bearerToken = req.get("Authorization")
 
     if (!bearerToken) {
@@ -31,6 +31,25 @@ async function checkToken(req, res, next) {
 
         req.user = payload
 
+        next()
+    } catch (error) {
+        next(new CustomError("Wrong token.", 401))
+    }
+}*/
+
+async function checkToken(req, res, next) {
+    const token = req.cookies.token
+
+    if (!token) {
+        throw new CustomError("JWT required.", 401)
+    }
+    if (token.trim() === "") {
+        throw new CustomError("JWT required.", 401)
+    }
+
+    try {
+        const payload = jwt.verify(token, jwtSecret)
+        req.user = payload
         next()
     } catch (error) {
         next(new CustomError("Wrong token.", 401))

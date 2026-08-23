@@ -1,0 +1,51 @@
+@font-face {
+    font-family: "Oswald";
+    src: url(../materials/Oswald.ttf) format("woff2");
+}
+@font-face {
+    font-family: Trafaret-Kit;
+    src: url("../materials/trafaretkit.ttf") format("woff2");
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 7rem;
+}
+
+#menu {
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+}
+
+#menu > * {
+    width: 4rem;
+    height: 2.5rem;
+    box-sizing: border-box;
+    border: 0;
+    background: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-button:hover {
+    cursor: pointer;
+}
+
+svg {
+    display: block;
+}
+
+#logo {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+    margin-left: 2rem;
+}

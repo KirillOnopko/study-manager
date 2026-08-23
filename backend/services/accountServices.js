@@ -8,8 +8,9 @@ const jwtSecret = process.env.JWT_SECRET
 
 async function registerService(name, username, email, password) {
     const hashedPassword = await bcrypt.hash(password, 10)
+    const smallUsername = username.toLowerCase()
 
-    const result = await pool.query("INSERT INTO users (name, username, email, password) VALUES ($1, $2, $3, $4) RETURNING *", [name, username, email, hashedPassword])
+    const result = await pool.query("INSERT INTO users (name, username, email, password) VALUES ($1, $2, $3, $4) RETURNING name, username, email", [name, smallUsername, email, hashedPassword])
 
     if (result.rows.length === 0) {
         throw new CustomError("Something went wrong.", 400)
@@ -19,7 +20,8 @@ async function registerService(name, username, email, password) {
 }
 
 async function loginService(username, password) {
-    const result = await pool.query("SELECT * FROM users WHERE username = $1", [username])
+    const smallUsername = username.toLowerCase()
+    const result = await pool.query("SELECT * FROM users WHERE username = $1", [smallUsername])
     if (result.rows.length === 0) {
         throw new CustomError("User not found", 404)
     }
@@ -32,7 +34,7 @@ async function loginService(username, password) {
     const token = jwt.sign({
         "id": result.rows[0].id,
         "username": result.rows[0].username
-    }, jwtSecret, {expiresIn: "1h"})
+    }, jwtSecret, {expiresIn: "30m"})
 
     return {"token": token}
 }
@@ -44,13 +46,17 @@ async function myAccountService(id) {
         throw new CustomError("User not found.", 404)
     }
 
+    const tasks = await pool.query("SELECT COUNT(*) FROM tasks WHERE owner_id = $1", [id])
+    const subjects = await pool.query("SELECT COUNT(*) FROM subjects WHERE owner_id = $1", [id])
+
     const {name, username, email, created_at} = result.rows[0]
 
     return {
         "name": name, 
         "username": username,
-        "email": email,
-        "created_at": created_at
+        "created_at": created_at,
+        "tasks": tasks.rows[0].count,
+        "subjects": subjects.rows[0].count
     }
 }
 

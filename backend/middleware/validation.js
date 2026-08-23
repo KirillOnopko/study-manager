@@ -120,7 +120,7 @@ function checkParamsId(req, res, next) {
 }
 
 function createSubjectValidator(req, res, next) {
-    if (!req.body || !(typeof req.body === "object") || !Array.isArray(req.body)) {
+    if (!req.body || typeof req.body !== "object" || Array.isArray(req.body)) {
         throw new CustomError("Body must be a object.", 400)
     }
 
@@ -165,7 +165,7 @@ function createSubjectValidator(req, res, next) {
 }
 
 function updateSubjectValidator(req, res, next) {
-    if (!req.body || !(typeof req.body === "object") || !Array.isArray(req.body)) {
+    if (!req.body || typeof req.body !== "object" || Array.isArray(req.body)) {
         throw new CustomError("Body must be a object.", 400)
     }
 
@@ -209,7 +209,7 @@ function updateSubjectValidator(req, res, next) {
 }
 
 function createTaskValidator(req, res, next) {
-    if (!req.body || !(typeof req.body === "object") || !Array.isArray(req.body)) {
+    if (!req.body || typeof req.body !== "object" || Array.isArray(req.body)) {
         throw new CustomError("Body must be a object.", 400)
     }
 
@@ -282,7 +282,7 @@ function createTaskValidator(req, res, next) {
 }
 
 function updateTaskValidator(req, res, next) {
-    if (!req.body || !(typeof req.body === "object") || !Array.isArray(req.body)) {
+    if (!req.body || typeof req.body !== "object" || Array.isArray(req.body)) {
         throw new CustomError("Body must be a object.", 400)
     }
 

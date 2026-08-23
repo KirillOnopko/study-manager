@@ -1,0 +1,14 @@
+p {
+    /*font-family: Oswald;*/
+    font-size: 2rem;
+    transition: color 0.3s;
+}
+
+p:hover {
+    color: rgb(0, 134, 45);
+}
+
+a {
+    font-size: 2.5rem;
+    margin: 0 1rem;
+}
