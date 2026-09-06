@@ -36,10 +36,6 @@ function getSubjectsPage(req, res) {
     res.status(200).sendFile(path.join(__dirname, "../../frontend/html/subjects.html"))
 }
 
-function getCalendarPage(req, res) {
-    res.status(200).sendFile(path.join(__dirname, "../../frontend/html/calendar.html"))
-}
-
 function getHelperPage(req, res) {
     res.status(200).sendFile(path.join(__dirname, "../../frontend/html/ai-helper.html"))
 }
@@ -47,4 +43,4 @@ function getHelperPage(req, res) {
 
 export {getMainPage, getRegistrationPage, getLoginPage, 
         getDashboardPage, getAccountPage, getTasksPage,
-        getSubjectsPage, getCalendarPage, getHelperPage}
+        getSubjectsPage, getHelperPage}

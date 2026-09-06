@@ -90,6 +90,8 @@ function renderMessages(messages) {
         }
 
         aiHelperChat.append(p)
+
+        aiHelperChat.scrollTop = aiHelperChat.scrollHeight
     }
 }
 
