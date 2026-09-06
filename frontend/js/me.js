@@ -46,7 +46,7 @@ const subjectElement = document.querySelector("#subjectsNumber")
 const tasksElement = document.querySelector("#tasksNumber")
 
 nameElement.textContent = name
-usernameElement.textContent = username
+usernameElement.textContent = "@"+username
 tasksElement.textContent = tasks
 subjectElement.textContent = subjects
 

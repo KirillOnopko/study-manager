@@ -1,0 +1,329 @@
+#task-search {
+    margin-left: 2rem;
+    height: 3.5rem;
+    width: 50rem;
+    font-size: 2rem;
+}
+
+#task-search-label {
+    font-size: 2rem;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+#search-conditions {
+    display: grid;
+    grid-template-columns: 23.5rem 23.5rem  23.5rem;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    gap: 3rem;
+}
+
+.search-condition {
+    width: 23.5rem;
+    height: 10rem;
+    background: var(--surface);
+    border: 0.2rem solid var(--border);
+    box-sizing: border-box;
+}
+
+.search-condition-p {
+    font-size: 2rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.dropdown-menu {
+    font-size: 2rem;
+    margin-left: 1rem;
+    width: 13rem;
+    background: var(--text-secondary);
+}
+
+#all-tasks-field {
+    margin-left: 2rem;
+    margin-top: 2rem;
+    width: 120rem;
+    height: auto;
+    background: var(--surface);
+    border: 0.2rem solid var(--border);
+    margin-bottom: 2rem;
+}
+
+#all-tasks-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#all-tasks-header p {
+    margin: 2rem;
+    font-size: 2rem;
+}
+
+#new-task-button {
+    margin: 2rem;
+    font-size: 2rem;
+    color: var(--text);
+    background: var(--surface);
+    border: 0.2rem solid var(--border);
+    transition: background 0.3s;
+}
+
+#new-task-button:hover {
+    background: var(--surface-secondary);
+}
+
+#all-tasks-main {
+    display: grid;
+    grid-template-columns: 60rem 60rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: 2rem;
+    position: relative;
+
+}
+
+.task {
+    width: 56rem;
+    height: 14.5rem;
+    box-sizing: border-box;
+    background: var(--surface-secondary);
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: opacity 0.3s;
+}
+
+.task::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.task.darkened::after {
+    opacity: 1;
+}
+
+.title-and-edit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.title {
+    /*font-weight: 600;*/
+    text-decoration: underline;
+}
+
+.edit-button {
+    background: var(--surface-secondary);
+    border: 0;
+    color: inherit;
+    width: 2.6rem;
+    height: 2.6rem;
+}
+
+.subject {
+    margin-right: 1rem;
+    margin-left: 4rem;
+}
+
+.description-and-subject {
+    display: flex;
+    margin-left: 1rem;
+    justify-content: space-between;
+    margin-top: 0.3rem;
+    align-items: center;
+}
+
+.description {
+    font-size: 1.9rem;
+    filter: brightness(0.9);
+}
+
+.status-and-deadline {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.task-menu {
+    position: absolute;
+    width: 30rem;
+    height: 9rem;
+    background: var(--surface-secondary);
+    margin-top: 2.5rem;
+    margin-left: 13rem;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    align-items: center;
+    transition: opacity 0.3s;
+    z-index: 2;
+}
+
+.task-menu-cross {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    border-radius: 50%;
+    border: 0.2rem solid var(--border);
+}
+
+.task-menu-button {
+    height: 4rem;
+    font-size: 2rem;
+}
+
+.unvisible {
+    opacity: 0;
+    pointer-events: none;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+body.darkened::after {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#create-task-form {
+    position: fixed;
+    width: 50rem;
+    height: 67rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--surface);
+    z-index: 3;
+    border: var(--border) 0.2rem solid;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transition: opacity 0.3s;
+}
+
+#create-task-form-1 {
+    position: fixed;
+    width: 50rem;
+    height: 67rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--surface);
+    z-index: 3;
+    border: var(--border) 0.2rem solid;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transition: opacity 0.3s;
+}
+
+#update-task-form {
+    position: fixed;
+    width: 50rem;
+    height: 67rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--surface);
+    z-index: 3;
+    border: var(--border) 0.2rem solid;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transition: opacity 0.3s;
+}
+
+#create-task-form h1 {
+    margin-top: 2rem;
+    font-size: 3rem;
+}
+
+.create-task-container input {
+    font-size: 2rem;
+    height: 3rem;
+    box-sizing: border-box;
+}
+
+.create-task-container select {
+    height: 3rem;
+    box-sizing: border-box;
+    font-size: 2rem;
+}
+
+.create-task-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    gap: 1rem;
+    font-size: 2rem;
+}
+
+#create-task-buttons {
+    display: flex;
+    gap: 8rem;
+    margin-top: 3rem;
+}
+
+#create-task-buttons button {
+    box-sizing: border-box;
+    height: 3rem;
+    width: 10rem;
+    font-size: 1.5rem;
+    
+}
+
+
+
+@media (max-width: 810px) {
+    #search-conditions {
+        grid-template-columns: 23.5rem 23.5rem;
+    }
+
+    #all-tasks-field {
+        width: 60rem;
+    }
+
+    #all-tasks-main {
+        grid-template-columns: 50rem;
+    }
+}

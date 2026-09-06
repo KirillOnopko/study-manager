@@ -2,9 +2,31 @@ import pool from "../db.js"
 import { CustomError } from "../errors/customError.js"
 
 async function getTasksService(ownerId) {
-    const result = await pool.query("SELECT * FROM tasks WHERE owner_id = $1", [ownerId])
+    const result = await pool.query(`
+        SELECT
+            tasks.id,
+            tasks.title,
+            tasks.description,
+            tasks.status,
+            tasks.deadline,
+            tasks.importance,
+            tasks.subject_id,
+            subjects.title AS subject
+        FROM tasks
+        LEFT JOIN subjects
+            ON tasks.subject_id = subjects.id
+        WHERE tasks.owner_id = $1
+    `, [ownerId])
 
-    return result.rows
+    const number = await pool.query(
+        "SELECT COUNT(*) FROM tasks WHERE owner_id = $1",
+        [ownerId]
+    )
+
+    return {
+        tasks: result.rows,
+        number: number.rows[0].count
+    }
 }
 
 async function getTaskService(id, ownerId) {

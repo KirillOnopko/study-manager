@@ -14,8 +14,6 @@ registrationForm.addEventListener("submit", async (event) => {
         body: JSON.stringify(data)
     })
 
-    const result = await response.json()
-
     const messageField = document.querySelector("#message-field")
 
     if (!response.ok) {

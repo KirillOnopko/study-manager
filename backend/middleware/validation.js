@@ -259,7 +259,7 @@ function createTaskValidator(req, res, next) {
         if (typeof deadline !== "string") {
             throw new CustomError("Deadline must be a string.", 400)
         }
-        if (!(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/.test(deadline))) {
+        if (!(/^\d{4}-\d{2}-\d{2}$/.test(deadline))) {
             throw new CustomError("Wrong date format.", 400)
         }
         const date = new Date(deadline)
@@ -335,7 +335,7 @@ function updateTaskValidator(req, res, next) {
         if (typeof deadline !== "string") {
             throw new CustomError("Deadline must be a string.", 400)
         }
-        if (!(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/.test(deadline))) {
+        if (!(/^\d{4}-\d{2}-\d{2}$/.test(deadline))) {
             throw new CustomError("Wrong date format.", 400)
         }
         const date = new Date(deadline)

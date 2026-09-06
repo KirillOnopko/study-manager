@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Helper</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/ai-helper.css">
+    <script type="module" src="/js/ai-helper.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <p id="logo">Study Manager</p>
+
+        <div id="menu">
+            <button id="switch-theme-button" class="menu-button">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+
+            <a href="/me" class="menu-button">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </a>
+
+            <button id="logout-button" class="menu-button">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16 17 21 12 16 7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div id="app-content">
+        <aside>
+            <a href="/dashboard" class="aside-menu-button">Dashboard</a>
+            <a href="/tasks" class="aside-menu-button">Tasks</a>
+            <a href="/subjects" class="aside-menu-button">Subjects</a>
+            <a href="/calendar" class="aside-menu-button">Calendar</a>
+            <a href="/ai-helper" class="aside-menu-button active">AI Helper</a>
+        </aside>
+
+        <main>
+            <div id="greeting">
+                <p>Hier you can find help.</p>
+                <p>AI Helper can answer all of your questions.</p>
+            </div>
+
+            <div id="ai-helper-container">
+                <p id="ai-helper-header">AI-Assistent "Terminator"</p>
+
+                <div id="ai-helper-chat">
+                </div>
+
+                <form id="ai-helper-input">
+                    <input placeholder="Type a message..." type="text" required name="message">
+                    <button id="send-message-button" type="submit"><svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M21.5 3.5L2.8 10.7C2.2 10.9 2.2 11.8 2.8 12L10 14.3L12.3 21.2C12.5 21.8 13.4 21.8 13.7 21.2L21.9 4.5C22.2 3.8 22 3.3 21.5 3.5Z"
+                            fill="currentColor"
+                        />
+                        <path
+                            d="M10 14.3L17.2 7.4"
+                            stroke="white"
+                            stroke-width="1.5"
+                        stroke-linecap="round"/></svg>
+                    </button>
+                </form>
+            </div>
+        </main>
+</body>
+</html>

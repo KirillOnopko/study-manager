@@ -1,0 +1,228 @@
+
+
+#subjects-content {
+    width: 120rem;
+    height: auto;
+    background: var(--surface);
+    margin-left: 2rem;
+    margin-top: 1rem;
+    border: 0.2rem solid var(--border);
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+#subjects-header {
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#create-subject-button {
+    font-size: 2rem;
+    color: var(--text);
+    background: var(--surface);
+    border: 0.2rem solid var(--border);
+    transition: background 0.3s;
+}
+
+#create-subject-button:hover {
+    background: var(--border);
+}
+
+#subjects-field {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 2rem;
+    gap: 2rem;
+    box-sizing: border-box;
+}
+
+.subject-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+
+    font-size: 2rem;
+    background: var(--surface-secondary);
+    height: 13rem;
+    box-sizing: border-box;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.subject-title {
+    text-decoration: underline;
+    margin-bottom: 0.5rem;
+}
+
+.subject-description {
+    margin-bottom: 1rem;
+}
+
+.subject-field::after {
+    background: rgb(0,0,0,0.8);
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.subject-field.darkened::after {
+    opacity: 1;
+}
+
+.edit-subject-menu {
+    position: absolute;
+    background: var(--surface-secondary);
+    z-index: 1;
+    width: 30rem;
+    height: 8rem;
+    top: 2.5rem;
+    left: 12rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transition: 0.3s opacity;
+}
+
+.close-subject-menu {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    box-sizing: border-box;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.2rem solid var(--border);
+}
+
+.invisible {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.edit-subject-button {
+    position: absolute;
+    top: 0.8rem;
+    right: 1rem;
+    width: 4rem;
+    height: 3rem;
+    background: 0;
+    border: 0;
+    color: var(--text);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.update-subject-button {
+    height: 3.5rem;
+    width: 9rem;
+    font-size: 2rem;
+    box-sizing: border-box;
+}
+
+.delete-subject-button {
+    height: 3.5rem;
+    width: 8rem;
+    font-size: 2rem;
+    box-sizing: border-box;
+}
+
+#subject-form {
+    width: 40rem;
+    height: 35rem;
+    background: var(--surface);
+    border: var(--border) 0.2rem solid;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    transition: opacity 0.3s;
+}
+
+body::after {
+    content: "";
+    background: rgb(0,0,0,0.8);
+    inset: 0;
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 2;
+    transition: opacity 0.3s;
+}
+
+body.darkened::after {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.subject-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.subject-form h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    margin-top: 3rem;
+}
+
+#title-field {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+}
+
+#description-field {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+}
+
+#title-input {
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+#description-input {
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+#form-buttons {
+    margin-top: 2rem;
+    font-size: 1rem;
+    display: flex;
+    gap: 3rem;
+}
+
+.form-button {
+    font-size: 1.8rem;
+}
+
+@media (max-width: 810px) {
+    #subjects-field {
+        grid-template-columns: 1fr
+    }
+
+    #subjects-content {
+        width: 60rem;
+    }
+}

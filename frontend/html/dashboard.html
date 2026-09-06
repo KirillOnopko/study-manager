@@ -8,23 +8,57 @@
     <link rel="stylesheet" href="/css/dashboard.css">
     <script type="module" src="/js/dashboard.js" defer></script>
 </head>
+
 <body>
     <header>
         <p id="logo">Study Manager</p>
+
         <div id="menu">
             <button id="switch-theme-button" class="menu-button">
-                <svg xmlns="http://w3.org" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                 </svg>
             </button>
+
             <a href="/me" class="menu-button">
-                <svg xmlns="http://w3.org" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                     <circle cx="12" cy="7" r="4"></circle>
                 </svg>
             </a>
+
             <button id="logout-button" class="menu-button">
-                <svg xmlns="http://w3.org" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
                     <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
                     <polyline points="16 17 21 12 16 7"></polyline>
                     <line x1="21" y1="12" x2="9" y2="12"></line>
@@ -32,8 +66,96 @@
             </button>
         </div>
     </header>
-    <main>
-        <div></div>
-    </main>
+
+    <div id="app-content">
+        <aside>
+            <a href="/dashboard" class="aside-menu-button active">Dashboard</a>
+            <a href="/tasks" class="aside-menu-button">Tasks</a>
+            <a href="/subjects" class="aside-menu-button">Subjects</a>
+            <a href="/calendar" class="aside-menu-button">Calendar</a>
+            <a href="/ai-helper" class="aside-menu-button">AI Helper</a>
+        </aside>
+
+        <main>
+            <div id="greeting">
+                <p id="greeting-message">
+                    Hello, <span id="name"></span>! 👋
+                </p>
+
+                <p id="information-message">
+                    Here's what's happening with your studies. 👇
+                </p>
+            </div>
+
+            <div id="dashboard-content">
+
+                <div id="first-column">
+        
+                    <div id="tasks-information">
+                        <div class="task-information">
+                            <p>Tasks:</p>
+                            <p>
+                                <span id="all-tasks">no content // </span>
+                                <span>items</span>
+                            </p>
+                        </div>
+
+                        <div class="task-information">
+                            <p>Pending:</p>
+                            <p>
+                                <span id="pending-tasks">no content // </span>
+                                <span>items</span>
+                            </p>
+                        </div>
+
+                        <div class="task-information">
+                            <p>In Progress:</p>
+                            <p>
+                                <span id="in-progress-tasks">no content // </span>
+                                <span>items</span>
+                            </p>
+                        </div>
+
+                        <div class="task-information">
+                            <p>Completed:</p>
+                            <p>
+                                <span id="completed-tasks">no content // </span>
+                                <span>items</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div id="upcoming-tasks-block">
+                        <div id="upcoming-tasks-header">
+                            <p>Upcoming Tasks</p>
+                            <a href="/tasks" class="view-all-link">
+                                View all →
+                            </a>
+                        </div>
+                        
+                        <div id="upcoming-tasks">
+                            
+                        </div>
+                    
+                    </div>
+                </div>
+
+                <div id="subjects-block">
+                    <div id="subjects-header">
+                        <p>Subjects</p>
+                        <a href="/subjects" class="view-all-link">
+                            View all →
+                        </a>
+                    </div>
+
+                    <div id="subjects">
+                        
+                    </div>
+                    
+                </div>
+
+            </div>
+        </main>
+    </div>
 </body>
 </html>

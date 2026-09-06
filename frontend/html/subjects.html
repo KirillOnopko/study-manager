@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subjects</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/subjects.css">
+    <script type="module" src="/js/subjects.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <p id="logo">Study Manager</p>
+
+        <div id="menu">
+            <button id="switch-theme-button" class="menu-button">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+
+            <a href="/me" class="menu-button">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </a>
+
+            <button id="logout-button" class="menu-button">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16 17 21 12 16 7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div id="app-content">
+        <aside>
+            <a href="/dashboard" class="aside-menu-button">Dashboard</a>
+            <a href="/tasks" class="aside-menu-button">Tasks</a>
+            <a href="/subjects" class="aside-menu-button active">Subjects</a>
+            <a href="/calendar" class="aside-menu-button">Calendar</a>
+            <a href="/ai-helper" class="aside-menu-button">AI Helper</a>
+        </aside>
+
+        <main>
+            <div id="greeting">
+                <p>Hier you can find your subjects.</p>
+                <p>Manage your subjects and track your tasks.</p>
+            </div>
+
+            <div id="subjects-content">
+                <div id="subjects-header">
+                    <p><span id="subjects-number"></span> <span id="subjects-word">subjects</span></p>
+                    <button id="create-subject-button">+ New Subject</button>
+                </div>
+                
+                <div id="subjects-field">
+
+                </div>
+            </div>
+
+            <div class="invisible" id="subject-form">
+                
+            </div>
+        </main>
+</body>
+</html>

@@ -28,4 +28,23 @@ function getAccountPage(req, res) {
     res.status(200).sendFile(path.join(__dirname, "../../frontend/html/me.html"))
 }
 
-export { getMainPage, getRegistrationPage, getLoginPage, getDashboardPage, getAccountPage }
+function getTasksPage(req, res) {
+    res.status(200).sendFile(path.join(__dirname, "../../frontend/html/tasks.html"))
+} 
+
+function getSubjectsPage(req, res) {
+    res.status(200).sendFile(path.join(__dirname, "../../frontend/html/subjects.html"))
+}
+
+function getCalendarPage(req, res) {
+    res.status(200).sendFile(path.join(__dirname, "../../frontend/html/calendar.html"))
+}
+
+function getHelperPage(req, res) {
+    res.status(200).sendFile(path.join(__dirname, "../../frontend/html/ai-helper.html"))
+}
+
+
+export {getMainPage, getRegistrationPage, getLoginPage, 
+        getDashboardPage, getAccountPage, getTasksPage,
+        getSubjectsPage, getCalendarPage, getHelperPage}

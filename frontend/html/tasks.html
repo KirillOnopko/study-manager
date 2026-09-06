@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/tasks.css">
+    <script type="module" src="/js/tasks.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <p id="logo">Study Manager</p>
+
+        <div id="menu">
+            <button id="switch-theme-button" class="menu-button">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+
+            <a href="/me" class="menu-button">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </a>
+
+            <button id="logout-button" class="menu-button">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16 17 21 12 16 7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div id="app-content">
+        <aside>
+            <a href="/dashboard" class="aside-menu-button">Dashboard</a>
+            <a href="/tasks" class="aside-menu-button active">Tasks</a>
+            <a href="/subjects" class="aside-menu-button">Subjects</a>
+            <a href="/calendar" class="aside-menu-button">Calendar</a>
+            <a href="/ai-helper" class="aside-menu-button">AI Helper</a>
+        </aside>
+
+        <main>
+            <div id="greeting">
+                <p>Hier you can find your tasks.</p>
+                <p>Manage your tasks and stay on track.</p>
+            </div>
+
+            <label for="task-search" id="task-search-label">Task search 🔍</label>
+            <input type="search" id="task-search" placeholder="Search tasks...">
+
+            <div id="search-conditions">
+                <div id="status" class="search-condition">
+                    <p class="search-condition-p">Status</p>
+                    <select name="status" id="status-filter" class="dropdown-menu">
+                        <option value="all">All</option>
+                        <option value="pending">Pending</option>
+                        <option value="in_progress">In Progress</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+                <div id="subject" class="search-condition">
+                    <p class="search-condition-p">Subject</p>
+                    <select name="subject" id="subject-filter" class="dropdown-menu">
+                        <option value="all">All</option>
+                        <option value="general">General</option>
+                    </select>
+                </div>
+                <div id="sort" class="search-condition">
+                    <p class="search-condition-p">Sort by</p>
+                    <select name="sort" id="sort-filter" class="dropdown-menu">
+                        <option value="none">None</option>
+                        <option value="deadline_asc">Deadline ↑</option>
+                        <option value="deadline_desc">Deadline ↓</option>
+                        <option value="title_asc">Title A–Z</option>
+                        <option value="title_desc">Title Z–A</option>
+                        <option value="subject_asc">Subject A–Z</option>
+                        <option value="subject_desc">Subject Z–A</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="all-tasks-field">
+                <div id="all-tasks-header">
+                   <p><span id="tasks-number">10</span> <span id="tasks-word">tasks</span></p>
+                    <button id="new-task-button">+ New Task</button> 
+                </div>
+                <div id="create-task-form" class="unvisible">
+                    
+                </div>
+
+                <div id="all-tasks-main">
+                    
+                </div>
+
+            </div>
+        </main>
+    </div>
+</body>
+</html>

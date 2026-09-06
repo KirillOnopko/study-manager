@@ -14,8 +14,6 @@ form.addEventListener("submit", async (event) => {
         body: JSON.stringify(data)
     })
 
-    const result = await response.json()
-
     if (!response.ok) {
         const messageField = document.querySelector("#message-field")
         messageField.style.opacity = 1

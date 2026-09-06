@@ -17,8 +17,7 @@ async function login(req, res) {
         httpOnly: true
     })
 
-    res.status(200).json(result)
-    // res.status(200).json({"message": "Successfuly loged in"})
+    res.status(200).json({"message": "Successfuly loged in"})
 }
 
 async function myAccount(req, res) {

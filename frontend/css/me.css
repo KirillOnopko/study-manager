@@ -39,7 +39,7 @@ main {
     background-position: top;
     width: 15rem;
     height: 15rem;
-    border-radius: 9rem; /* 9rem для круга */
+    border-radius: 50%; /* 9rem для круга */
     border: #334155 0.2rem solid;
     position: absolute;
     left: 12.5rem;
