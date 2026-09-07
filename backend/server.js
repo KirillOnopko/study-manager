@@ -24,7 +24,7 @@ app.use(cookieParser())
 
 app.use(express.json())
 
-app.use(express.static(path.join(__dirname, "../frontend")))
+app.use(express.static(path.join(__dirname, "../docs")))
 
 app.use("/", pageRouter)
 app.use("/account", accountRouter)
@@ -36,6 +36,6 @@ app.use("/api/ai", aiRouter)
 app.use(errorHandler)
 app.use(notFoundHandler)
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 5000, "0.0.0.0", () => {
     console.log("Server started.")
 })
